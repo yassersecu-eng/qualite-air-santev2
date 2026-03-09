@@ -1,102 +1,343 @@
-<section id="air-sante">
+<!DOCTYPE html>
+<html lang="fr">
 
-<h2>🌍 La qualité de l’air et la santé</h2>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h3>1. Qu’est-ce que la pollution de l’air ?</h3>
+<title>La qualité de l'air et la santé</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background-image:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+opacity:0.9;
+}
+
+/* SECTION */
+
+section{
+padding:80px 10%;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:25px;
+border-radius:15px;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+background:rgba(255,255,255,0.15);
+}
+
+/* TITLES */
+
+h2{
+text-align:center;
+margin-bottom:30px;
+font-size:32px;
+}
+
+/* LIST */
+
+ul{
+margin-left:20px;
+margin-top:10px;
+line-height:1.6;
+}
+
+/* MESSAGE */
+
+.message{
+margin-top:50px;
+padding:40px;
+text-align:center;
+background:linear-gradient(135deg,#38bdf8,#06b6d4);
+border-radius:15px;
+font-size:22px;
+}
+
+/* SOURCES */
+
+.sources{
+margin-top:60px;
+background:rgba(255,255,255,0.05);
+padding:30px;
+border-radius:15px;
+}
+
+.sources a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* SHAPES */
+
+.shape{
+position:fixed;
+width:200px;
+height:200px;
+background:linear-gradient(135deg,#38bdf8,#22d3ee);
+opacity:0.15;
+border-radius:50%;
+filter:blur(60px);
+animation:float 10s infinite alternate;
+}
+
+.shape2{
+top:20%;
+left:-50px;
+}
+
+.shape3{
+bottom:10%;
+right:-50px;
+animation-delay:5s;
+}
+
+@keyframes float{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(-80px);
+}
+}
+
+/* SCROLL ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="shape shape2"></div>
+<div class="shape shape3"></div>
+
+<div class="hero">
+
+<div>
+
+<h1>🌍 La qualité de l'air et la santé</h1>
 
 <p>
+Comprendre pourquoi l'air que nous respirons est essentiel pour notre santé
+</p>
+
+</div>
+
+</div>
+
+<section class="hidden">
+
+<h2>Qu'est-ce que la pollution de l'air ?</h2>
+
+<div class="cards">
+
+<div class="card">
 La pollution de l’air correspond à la présence de substances polluantes dans l’air qui peuvent être dangereuses pour la santé et l’environnement.
-</p>
+</div>
 
-<p>Les principaux polluants sont :</p>
+<div class="card">
 
-<ul>
-<li>Les particules fines (PM2.5 et PM10)</li>
-<li>Le dioxyde d’azote (NO₂) produit surtout par les voitures</li>
-<li>L’ozone (O₃)</li>
-<li>D’autres gaz et polluants provenant de l’industrie ou du chauffage</li>
-</ul>
-
-<p>Ces polluants proviennent principalement :</p>
+<b>Principaux polluants :</b>
 
 <ul>
-<li>Du transport routier</li>
-<li>Des activités industrielles</li>
-<li>Du chauffage des bâtiments</li>
-<li>De certaines activités agricoles ou énergétiques</li>
+<li>Particules fines (PM2.5 et PM10)</li>
+<li>Dioxyde d’azote (NO₂)</li>
+<li>Ozone (O₃)</li>
+<li>Gaz industriels</li>
 </ul>
 
-<h3>2. Les effets sur la santé</h3>
+</div>
 
-<p>
-La pollution de l’air peut provoquer de nombreux problèmes de santé.
-</p>
+<div class="card">
 
-<h4>Problèmes respiratoires</h4>
+<b>Sources :</b>
+
+<ul>
+<li>Transport routier</li>
+<li>Activités industrielles</li>
+<li>Chauffage des bâtiments</li>
+<li>Activités agricoles</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="hidden">
+
+<h2>Les effets sur la santé</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<b>Problèmes respiratoires</b>
 
 <ul>
 <li>Irritations des voies respiratoires</li>
-<li>Toux et difficultés à respirer</li>
-<li>Aggravation de maladies comme l’asthme</li>
+<li>Toux</li>
+<li>Asthme</li>
 </ul>
 
-<h4>Maladies cardiovasculaires</h4>
+</div>
+
+<div class="card">
+
+<b>Maladies cardiovasculaires</b>
 
 <p>
 Les particules fines peuvent pénétrer dans le sang et favoriser les maladies du cœur et les AVC.
 </p>
 
-<h4>Impact global</h4>
+</div>
+
+<div class="card">
+
+<b>Impact mondial</b>
 
 <p>
-Selon l’Organisation mondiale de la santé, la pollution de l’air est associée à environ <strong>6,7 millions de décès prématurés chaque année dans le monde.</strong>
+La pollution de l’air est associée à environ <b>6,7 millions de décès prématurés par an</b> dans le monde.
 </p>
 
-<h3>3. Comment améliorer la qualité de l’air ?</h3>
+</div>
 
-<ul>
-<li>Développer les transports moins polluants</li>
-<li>Améliorer l’efficacité énergétique des bâtiments</li>
-<li>Produire de l’énergie plus propre</li>
-<li>Réduire les émissions industrielles</li>
-<li>Mieux gérer les déchets</li>
-</ul>
+</div>
+
+</section>
+
+<section class="hidden">
+
+<h2>Comment améliorer la qualité de l'air ?</h2>
+
+<div class="cards">
+
+<div class="card">🚆 Développer les transports propres</div>
+<div class="card">⚡ Utiliser des énergies renouvelables</div>
+<div class="card">🏠 Améliorer l’efficacité énergétique</div>
+<div class="card">🏭 Réduire les émissions industrielles</div>
+<div class="card">♻️ Mieux gérer les déchets</div>
+
+</div>
 
 <div class="message">
 
 ⚠️ L’air que nous respirons influence directement notre santé.  
-Améliorer la qualité de l’air est essentiel pour protéger la santé humaine et l’environnement.
+Améliorer la qualité de l’air est essentiel pour protéger notre avenir.
 
 </div>
 
-<h3>📚 Sources</h3>
+</section>
+
+<section class="sources hidden">
+
+<h2>Sources</h2>
 
 <ul>
 
 <li>
-Ministère de la Santé – Qualité de l’air : sources de pollution et effets sur la santé  
-<br>
-<a href="https://sante.gouv.fr/sante-et-environnement/air-exterieur/qualite-de-l-air-exterieur-10984/article/qualite-de-l-air-sources-de-pollution-et-effets-sur-la-sante" target="_blank">
-Voir la source
+<a href="https://sante.gouv.fr/sante-et-environnement/air-exterieur/qualite-de-l-air-exterieur-10984/article/qualite-de-l-air-sources-de-pollution-et-effets-sur-la-sante">
+Ministère de la Santé
 </a>
 </li>
 
 <li>
-Ministère de la Transition écologique – Polluants de l’air : situation, impacts et encadrement  
-<br>
-<a href="https://www.ecologie.gouv.fr/politiques-publiques/polluants-lair-situation-impacts-encadrement#des-emissions-aux-concentrations-1" target="_blank">
-Voir la source
+<a href="https://www.ecologie.gouv.fr/politiques-publiques/polluants-lair-situation-impacts-encadrement">
+Ministère de la Transition écologique
 </a>
 </li>
 
 <li>
-Organisation mondiale de la santé – Air pollution and health  
-<br>
-<a href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health" target="_blank">
-Voir la source
+<a href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health">
+Organisation mondiale de la santé
 </a>
 </li>
 
 </ul>
 
 </section>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+</script>
+
+</body>
+</html>
