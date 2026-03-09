@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>La qualité de l'air et la santé</title>
+<title>La qualité de l’air et la santé</title>
 
 <style>
 
@@ -31,19 +31,19 @@ align-items:center;
 justify-content:center;
 text-align:center;
 background-image:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
 url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
 background-size:cover;
 background-position:center;
 }
 
 .hero h1{
-font-size:55px;
+font-size:60px;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
+font-size:22px;
 opacity:0.9;
 }
 
@@ -53,18 +53,25 @@ section{
 padding:80px 10%;
 }
 
+/* TITLES */
+
+h2{
+text-align:center;
+margin-bottom:40px;
+font-size:35px;
+}
+
 /* CARDS */
 
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
-margin-top:40px;
 }
 
 .card{
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 padding:25px;
 border-radius:15px;
 transition:0.4s;
@@ -72,89 +79,97 @@ border:1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
+transform:translateY(-10px) scale(1.05);
 background:rgba(255,255,255,0.15);
-}
-
-/* TITLES */
-
-h2{
-text-align:center;
-margin-bottom:30px;
-font-size:32px;
 }
 
 /* LIST */
 
 ul{
 margin-left:20px;
+line-height:1.7;
 margin-top:10px;
-line-height:1.6;
 }
 
 /* MESSAGE */
 
 .message{
-margin-top:50px;
-padding:40px;
+margin-top:60px;
+padding:50px;
 text-align:center;
 background:linear-gradient(135deg,#38bdf8,#06b6d4);
 border-radius:15px;
-font-size:22px;
+font-size:24px;
 }
 
 /* SOURCES */
 
-.sources{
-margin-top:60px;
-background:rgba(255,255,255,0.05);
-padding:30px;
-border-radius:15px;
+.sources-box{
+background:#cfd8e3;
+color:#1f2937;
+padding:50px;
+border-radius:20px;
+max-width:900px;
+margin:auto;
 }
 
-.sources a{
-color:#38bdf8;
+.sources-box h2{
+color:#1f2937;
+}
+
+.sources-box ul{
+list-style:disc;
+margin-left:40px;
+}
+
+.sources-box a{
+color:#2563eb;
 text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:40px;
+text-align:center;
+padding:20px;
+opacity:0.7;
 }
 
 /* SHAPES */
 
 .shape{
 position:fixed;
-width:200px;
-height:200px;
+width:250px;
+height:250px;
 background:linear-gradient(135deg,#38bdf8,#22d3ee);
 opacity:0.15;
 border-radius:50%;
-filter:blur(60px);
-animation:float 10s infinite alternate;
+filter:blur(80px);
+animation:float 12s infinite alternate;
+}
+
+.shape1{
+top:10%;
+left:-100px;
 }
 
 .shape2{
-top:20%;
-left:-50px;
-}
-
-.shape3{
 bottom:10%;
-right:-50px;
+right:-100px;
 animation-delay:5s;
 }
 
 @keyframes float{
-from{
-transform:translateY(0px);
-}
-to{
-transform:translateY(-80px);
-}
+from{transform:translateY(0)}
+to{transform:translateY(-80px)}
 }
 
 /* SCROLL ANIMATION */
 
 .hidden{
 opacity:0;
-transform:translateY(50px);
+transform:translateY(40px);
 transition:1s;
 }
 
@@ -169,17 +184,17 @@ transform:translateY(0);
 
 <body>
 
+<div class="shape shape1"></div>
 <div class="shape shape2"></div>
-<div class="shape shape3"></div>
 
 <div class="hero">
 
 <div>
 
-<h1>🌍 La qualité de l'air et la santé</h1>
+<h1>🌍 La qualité de l’air et la santé</h1>
 
 <p>
-Comprendre pourquoi l'air que nous respirons est essentiel pour notre santé
+Comprendre pourquoi l’air que nous respirons est essentiel pour notre santé
 </p>
 
 </div>
@@ -188,7 +203,7 @@ Comprendre pourquoi l'air que nous respirons est essentiel pour notre santé
 
 <section class="hidden">
 
-<h2>Qu'est-ce que la pollution de l'air ?</h2>
+<h2>Qu’est-ce que la pollution de l’air ?</h2>
 
 <div class="cards">
 
@@ -197,29 +212,23 @@ La pollution de l’air correspond à la présence de substances polluantes dans
 </div>
 
 <div class="card">
-
-<b>Principaux polluants :</b>
-
+<b>Principaux polluants</b>
 <ul>
 <li>Particules fines (PM2.5 et PM10)</li>
 <li>Dioxyde d’azote (NO₂)</li>
 <li>Ozone (O₃)</li>
 <li>Gaz industriels</li>
 </ul>
-
 </div>
 
 <div class="card">
-
-<b>Sources :</b>
-
+<b>Sources de pollution</b>
 <ul>
 <li>Transport routier</li>
 <li>Activités industrielles</li>
 <li>Chauffage des bâtiments</li>
 <li>Activités agricoles</li>
 </ul>
-
 </div>
 
 </div>
@@ -233,35 +242,26 @@ La pollution de l’air correspond à la présence de substances polluantes dans
 <div class="cards">
 
 <div class="card">
-
 <b>Problèmes respiratoires</b>
-
 <ul>
 <li>Irritations des voies respiratoires</li>
 <li>Toux</li>
 <li>Asthme</li>
 </ul>
-
 </div>
 
 <div class="card">
-
 <b>Maladies cardiovasculaires</b>
-
 <p>
 Les particules fines peuvent pénétrer dans le sang et favoriser les maladies du cœur et les AVC.
 </p>
-
 </div>
 
 <div class="card">
-
 <b>Impact mondial</b>
-
 <p>
-La pollution de l’air est associée à environ <b>6,7 millions de décès prématurés par an</b> dans le monde.
+La pollution de l’air est associée à environ <b>6,7 millions de décès prématurés chaque année</b>.
 </p>
-
 </div>
 
 </div>
@@ -270,7 +270,7 @@ La pollution de l’air est associée à environ <b>6,7 millions de décès pré
 
 <section class="hidden">
 
-<h2>Comment améliorer la qualité de l'air ?</h2>
+<h2>Comment améliorer la qualité de l’air ?</h2>
 
 <div class="cards">
 
@@ -291,51 +291,62 @@ Améliorer la qualité de l’air est essentiel pour protéger notre avenir.
 
 </section>
 
-<section class="sources hidden">
+<section class="hidden">
+
+<div class="sources-box">
 
 <h2>Sources</h2>
 
 <ul>
 
 <li>
-<a href="https://sante.gouv.fr/sante-et-environnement/air-exterieur/qualite-de-l-air-exterieur-10984/article/qualite-de-l-air-sources-de-pollution-et-effets-sur-la-sante">
-Ministère de la Santé
-</a>
-</li>
-
-<li>
-<a href="https://www.ecologie.gouv.fr/politiques-publiques/polluants-lair-situation-impacts-encadrement">
-Ministère de la Transition écologique
-</a>
-</li>
-
-<li>
+Organisation mondiale de la santé (OMS)  
+<br>
 <a href="https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health">
-Organisation mondiale de la santé
+https://www.who.int
+</a>
+</li>
+
+<li>
+Santé Publique France  
+<br>
+<a href="https://www.santepubliquefrance.fr">
+https://www.santepubliquefrance.fr
+</a>
+</li>
+
+<li>
+Airparif  
+<br>
+<a href="https://www.airparif.fr">
+https://www.airparif.fr
 </a>
 </li>
 
 </ul>
 
+</div>
+
 </section>
+
+<footer>
+
+Projet éducatif – Qualité de l’air et santé  
+BOURARACH BELGHITI Yasser / ZAK ABBOU Ilias / BENALAL Youssef
+
+</footer>
 
 <script>
 
-const observer = new IntersectionObserver(entries => {
-
-entries.forEach(entry => {
-
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
 if(entry.isIntersecting){
-
-entry.target.classList.add("show");
-
+entry.target.classList.add("show")
 }
+})
+})
 
-});
-
-});
-
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+document.querySelectorAll(".hidden").forEach(el=>observer.observe(el))
 
 </script>
 
