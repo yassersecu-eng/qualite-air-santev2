@@ -26,7 +26,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* PARTICLES CANVAS */
+/* PARTICLES */
 
 #particles{
 position:fixed;
@@ -43,7 +43,7 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-background:rgba(15,23,42,0.8);
+background:rgba(15,23,42,0.85);
 backdrop-filter:blur(10px);
 padding:15px 10%;
 display:flex;
@@ -113,23 +113,17 @@ transform:perspective(1000px) rotateX(5deg) rotateY(-5deg) scale(1.05);
 box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
-/* TITLES */
-
 h2{
 text-align:center;
 margin-bottom:30px;
 font-size:32px;
 }
 
-/* LIST */
-
 ul{
 margin-left:20px;
 margin-top:10px;
 line-height:1.6;
 }
-
-/* MESSAGE */
 
 .message{
 margin-top:50px;
@@ -139,8 +133,6 @@ background:linear-gradient(135deg,#38bdf8,#06b6d4);
 border-radius:15px;
 font-size:22px;
 }
-
-/* SOURCES */
 
 .sources{
 margin-top:60px;
@@ -182,7 +174,7 @@ from{transform:translateY(0px)}
 to{transform:translateY(-80px)}
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL */
 
 .hidden{
 opacity:0;
@@ -207,7 +199,7 @@ font-size:14px;
 color:#94a3b8;
 }
 
-/* TOP BUTTON */
+/* BUTTON */
 
 #topBtn{
 position:fixed;
@@ -227,16 +219,24 @@ display:none;
 
 <body>
 
+<audio id="music">
+<source src="musique.mp3" type="audio/mpeg">
+</audio>
+
 <canvas id="particles"></canvas>
 
 <nav>
+
 <div>🌍 Air & Santé</div>
+
 <div>
 <a href="#pollution">Pollution</a>
 <a href="#sante">Santé</a>
 <a href="#solutions">Solutions</a>
 <a href="#sources">Sources</a>
+<a href="#" id="musicBtn">🎵</a>
 </div>
+
 </nav>
 
 <div class="shape shape2"></div>
@@ -263,7 +263,7 @@ Comprendre pourquoi l'air que nous respirons est essentiel pour notre santé
 <div class="cards">
 
 <div class="card">
-La pollution de l’air correspond à la présence de substances polluantes dans l’air qui peuvent être dangereuses pour la santé et l’environnement.
+La pollution de l’air correspond à la présence de substances polluantes dans l’air dangereuses pour la santé et l’environnement.
 </div>
 
 <div class="card">
@@ -280,7 +280,7 @@ La pollution de l’air correspond à la présence de substances polluantes dans
 <b>Sources :</b>
 <ul>
 <li>Transport routier</li>
-<li>Activités industrielles</li>
+<li>Industrie</li>
 <li>Chauffage</li>
 <li>Agriculture</li>
 </ul>
@@ -299,7 +299,7 @@ La pollution de l’air correspond à la présence de substances polluantes dans
 <div class="card">
 <b>Problèmes respiratoires</b>
 <ul>
-<li>Irritations des voies respiratoires</li>
+<li>Irritations</li>
 <li>Toux</li>
 <li>Asthme</li>
 </ul>
@@ -308,7 +308,7 @@ La pollution de l’air correspond à la présence de substances polluantes dans
 <div class="card">
 <b>Maladies cardiovasculaires</b>
 <p>
-Les particules fines peuvent pénétrer dans le sang et favoriser les maladies du cœur et les AVC.
+Les particules fines peuvent pénétrer dans le sang et provoquer des maladies du cœur et des AVC.
 </p>
 </div>
 
@@ -329,18 +329,17 @@ La pollution de l’air est associée à environ <b>6,7 millions de décès pré
 
 <div class="cards">
 
-<div class="card">🚆 Développer les transports propres</div>
-<div class="card">⚡ Utiliser les énergies renouvelables</div>
-<div class="card">🏠 Améliorer l’efficacité énergétique</div>
-<div class="card">🏭 Réduire les émissions industrielles</div>
-<div class="card">♻️ Mieux gérer les déchets</div>
+<div class="card">🚆 Transports propres</div>
+<div class="card">⚡ Énergies renouvelables</div>
+<div class="card">🏠 Efficacité énergétique</div>
+<div class="card">🏭 Réduction industrielle</div>
+<div class="card">♻ Gestion des déchets</div>
 
 </div>
 
 <div class="message">
 
-⚠️ L’air que nous respirons influence directement notre santé.  
-Améliorer la qualité de l’air est essentiel pour protéger notre avenir.
+⚠ L’air que nous respirons influence directement notre santé.
 
 </div>
 
@@ -386,7 +385,7 @@ BOURARACH BELGHITI Yasser / ZAK ABBOU Iliass / BENALAL Youssef
 
 <script>
 
-/* TYPING TITLE */
+/* TITLE ANIMATION */
 
 const text="🌍 La qualité de l'air et la santé";
 let i=0;
@@ -398,7 +397,6 @@ i++;
 setTimeout(typing,50);
 }
 }
-
 typing();
 
 /* SCROLL ANIMATION */
@@ -429,6 +427,29 @@ btn.onclick=function(){
 window.scrollTo({top:0,behavior:"smooth"});
 };
 
+/* MUSIC */
+
+const music=document.getElementById("music");
+const musicBtn=document.getElementById("musicBtn");
+
+let playing=false;
+
+musicBtn.onclick=function(e){
+
+e.preventDefault();
+
+if(!playing){
+music.play();
+musicBtn.textContent="🔊";
+}else{
+music.pause();
+musicBtn.textContent="🎵";
+}
+
+playing=!playing;
+
+};
+
 /* PARTICLES */
 
 const canvas=document.getElementById("particles");
@@ -449,11 +470,13 @@ d:Math.random()*1
 }
 
 function draw(){
+
 ctx.clearRect(0,0,canvas.width,canvas.height);
 
 ctx.fillStyle="rgba(255,255,255,0.3)";
 
 particles.forEach(p=>{
+
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
@@ -463,9 +486,11 @@ p.y+=p.d;
 if(p.y>canvas.height){
 p.y=0;
 }
+
 });
 
 requestAnimationFrame(draw);
+
 }
 
 draw();
